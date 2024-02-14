@@ -1,13 +1,13 @@
-package me.jincrates.springbank.user.query.api;
+package me.jincrates.springbank.user.cmd.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UserQueryApiApplication {
+public class UserCommandApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserQueryApiApplication.class, args);
+		SpringApplication.run(UserCommandApplication.class, args);
 	}
 
 }
