@@ -1,9 +1,10 @@
-bootJar.enabled = true
+bootJar.enabled = false
 jar.enabled = false
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+  implementation 'org.springframework.boot:spring-boot-starter-validation'
   implementation "org.axonframework:axon-spring-boot-starter:${axonFrameworkVersion}"
   implementation "org.axonframework.extensions.mongo:axon-mongo:${axonFrameworkMongoDbVersion}"
 
