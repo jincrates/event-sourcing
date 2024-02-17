@@ -11,3 +11,5 @@ rootProject.name = 'user-management'
 include 'user.core'
 include 'user.cmd.api'
 include 'user.query.api'
+include 'user.oauth2'
+
