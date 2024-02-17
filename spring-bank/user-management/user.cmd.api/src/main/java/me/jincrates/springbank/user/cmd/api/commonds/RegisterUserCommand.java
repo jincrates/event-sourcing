@@ -1,17 +1,21 @@
 package me.jincrates.springbank.user.cmd.api.commonds;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import me.jincrates.springbank.user.core.models.User;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
-public record RegisterUserCommand(
-    @JsonIgnore
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class RegisterUserCommand {
+
     @TargetAggregateIdentifier
-    String id,
-    User user
-) {
+    private String id;
+    private User user;
 
     public RegisterUserCommand assignId(String uuid) {
-        return new RegisterUserCommand(uuid, this.user);
+        this.id = uuid;
+        return this;
     }
 }

@@ -21,7 +21,7 @@ public class User {
 
     @Id
     private String id;
-    
+
     @NotBlank(message = "이름은 필수입니다.")
     @Size(min = 2, message = "이름은 2 글자 이상이여야합니다.")
     private String name;

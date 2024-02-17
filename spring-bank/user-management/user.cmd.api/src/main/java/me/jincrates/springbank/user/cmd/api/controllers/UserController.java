@@ -27,18 +27,18 @@ public class UserController {
         @Validated @RequestBody RegisterUserCommand command
     ) {
         var registerCommand = command.assignId(UUID.randomUUID().toString());
-        log.info("[POST] 유저 등록(/api/v1/user/register) id={}", registerCommand.id());
+        log.info("[POST] 유저 등록(/api/v1/user/register) id={}", registerCommand.getId());
         try {
             commandGateway.send(registerCommand);
             return ResponseEntity.status(HttpStatus.CREATED)
-                .body(new RegisterUserResponse("유저가 등록되었습니다.", registerCommand.id()));
+                .body(new RegisterUserResponse("유저가 등록되었습니다.", registerCommand.getId()));
         } catch (Exception e) {
             var safeErrorMessage = "유저 저장 중에 오류가 발생했습니다.";
-            log.warn("{} id={}, errorMessage={}", safeErrorMessage, registerCommand.id(),
+            log.warn("{} id={}, errorMessage={}", safeErrorMessage, registerCommand.getId(),
                 e.getMessage());
 
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(new RegisterUserResponse(safeErrorMessage, registerCommand.id()));
+                .body(new RegisterUserResponse(safeErrorMessage, registerCommand.getId()));
         }
     }
 }
