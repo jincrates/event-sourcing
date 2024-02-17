@@ -1,0 +1,17 @@
+### 유저 등록
+POST http://localhost:8081/api/v1/user/register
+Content-Type: application/json
+
+{
+  "id": "",
+  "user": {
+    "name": "name",
+    "account": {
+      "username": "username@email.com",
+      "password": "Passw0rd",
+      "roles": [
+        "WRITE_PRIVILEGE"
+      ]
+    }
+  }
+}
